@@ -1,3 +1,4 @@
+// config/plugins.ts
 export default ({ env }) => ({
   // Cloudinary configuration
   upload: {
@@ -13,6 +14,13 @@ export default ({ env }) => ({
         uploadStream: {},
         delete: {},
       },
+    },
+  },
+
+  // Users-Permissions Plugin (JWT Secret)
+  "users-permissions": {
+    config: {
+      jwtSecret: env("JWT_SECRET"), // Read from environment variable
     },
   },
 });
