@@ -4,13 +4,13 @@
   "info": {
     "singularName": "certificate",
     "pluralName": "certificates",
-    "displayName": "Certificate"
+    "displayName": "Certificate "
   },
   "options": {
     "draftAndPublish": true
   },
   "attributes": {
-    "title": {
+    "Title": {
       "type": "string"
     },
     "Issuer": {
@@ -19,7 +19,7 @@
     "Date": {
       "type": "date"
     },
-    "images": {
+    "Image": {
       "allowedTypes": [
         "images",
         "files",
@@ -27,7 +27,7 @@
         "audios"
       ],
       "type": "media",
-      "multiple": true
+      "multiple": false
     },
     "Description": {
       "type": "text"
