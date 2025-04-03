@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "certificates",
+  "info": {
+    "singularName": "certificate",
+    "pluralName": "certificates",
+    "displayName": "Certificate"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "Issuer": {
+      "type": "string"
+    },
+    "Date": {
+      "type": "date"
+    },
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "Description": {
+      "type": "text"
+    }
+  }
+}
