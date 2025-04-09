@@ -6,13 +6,18 @@ export default [
     name: "strapi::cors",
     config: {
       enabled: true,
-      origin: ["https://personal-web-deploy.vercel.app"], // Your frontend
+      origin: [
+        "https://personal-web-deploy.vercel.app",
+        "http://127.0.0.1:5500", // Add your local development server
+        "http://localhost:5500", // Also add localhost equivalent
+        "http://localhost:3000", // Common Next.js development port
+      ],
       headers: [
         "Content-Type",
         "Authorization",
         "Origin",
         "Accept",
-        "cache-control", // Important!
+        "cache-control",
       ],
       methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
       credentials: true,
