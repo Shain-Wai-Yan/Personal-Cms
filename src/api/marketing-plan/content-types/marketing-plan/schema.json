@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "marketing_plans",
+  "info": {
+    "singularName": "marketing-plan",
+    "pluralName": "marketing-plans",
+    "displayName": "MarketingPlan"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "DocumentFile": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "CoverImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}

@@ -369,6 +369,39 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBusinessPlanBusinessPlan
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'business_plans';
+  info: {
+    displayName: 'BusinessPlan';
+    pluralName: 'business-plans';
+    singularName: 'business-plan';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CoverImage: Schema.Attribute.Media<'images', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text;
+    DocumentFile: Schema.Attribute.Media<'files', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::business-plan.business-plan'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Slug: Schema.Attribute.UID<'Title'>;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCertificateCertificate extends Struct.CollectionTypeSchema {
   collectionName: 'certificates';
   info: {
@@ -394,6 +427,39 @@ export interface ApiCertificateCertificate extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    Title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMarketingPlanMarketingPlan
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'marketing_plans';
+  info: {
+    displayName: 'MarketingPlan';
+    pluralName: 'marketing-plans';
+    singularName: 'marketing-plan';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    CoverImage: Schema.Attribute.Media<'images', true>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    Description: Schema.Attribute.Text;
+    DocumentFile: Schema.Attribute.Media<'files', true>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::marketing-plan.marketing-plan'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    Slug: Schema.Attribute.UID<'Title'>;
     Title: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -910,7 +976,9 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::business-plan.business-plan': ApiBusinessPlanBusinessPlan;
       'api::certificate.certificate': ApiCertificateCertificate;
+      'api::marketing-plan.marketing-plan': ApiMarketingPlanMarketingPlan;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

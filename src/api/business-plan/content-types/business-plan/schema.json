@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "business_plans",
+  "info": {
+    "singularName": "business-plan",
+    "pluralName": "business-plans",
+    "displayName": "BusinessPlan"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "uid",
+      "targetField": "Title"
+    },
+    "Description": {
+      "type": "text"
+    },
+    "DocumentFile": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "CoverImage": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true
+    }
+  }
+}
