@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "landscape_photos",
+  "info": {
+    "singularName": "landscape-photo",
+    "pluralName": "landscape-photos",
+    "displayName": "Photography",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "alt_text": {
+      "type": "string"
+    },
+    "location": {
+      "type": "string"
+    },
+    "aspect_ratio": {
+      "type": "enumeration",
+      "enum": [
+        "landscape",
+        "portrait",
+        "square"
+      ]
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category",
+      "inversedBy": "photography"
+    },
+    "tags": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::tag.tag",
+      "inversedBy": "photographies"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Tag"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "photographies": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::landscape-photo.landscape-photo",
+      "mappedBy": "tags"
+    }
+  }
+}
