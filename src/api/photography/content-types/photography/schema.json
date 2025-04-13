@@ -1,9 +1,9 @@
 {
   "kind": "collectionType",
-  "collectionName": "landscape_photos",
+  "collectionName": "photographies",
   "info": {
-    "singularName": "landscape-photo",
-    "pluralName": "landscape-photos",
+    "singularName": "photography",
+    "pluralName": "photographies",
     "displayName": "Photography",
     "description": ""
   },

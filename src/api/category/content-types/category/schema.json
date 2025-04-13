@@ -18,7 +18,7 @@
     "photography": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::landscape-photo.landscape-photo",
+      "target": "api::photography.photography",
       "mappedBy": "category"
     }
   }

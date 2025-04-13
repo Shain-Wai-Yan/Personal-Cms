@@ -16,7 +16,7 @@
     "photographies": {
       "type": "relation",
       "relation": "manyToMany",
-      "target": "api::landscape-photo.landscape-photo",
+      "target": "api::photography.photography",
       "mappedBy": "tags"
     }
   }

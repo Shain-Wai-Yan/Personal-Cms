@@ -427,7 +427,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
       Schema.Attribute.Unique;
     photography: Schema.Attribute.Relation<
       'oneToOne',
-      'api::landscape-photo.landscape-photo'
+      'api::photography.photography'
     >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -468,44 +468,6 @@ export interface ApiCertificateCertificate extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiLandscapePhotoLandscapePhoto
-  extends Struct.CollectionTypeSchema {
-  collectionName: 'landscape_photos';
-  info: {
-    description: '';
-    displayName: 'Photography';
-    pluralName: 'landscape-photos';
-    singularName: 'landscape-photo';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    alt_text: Schema.Attribute.String;
-    aspect_ratio: Schema.Attribute.Enumeration<
-      ['landscape', 'portrait', 'square']
-    >;
-    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::landscape-photo.landscape-photo'
-    > &
-      Schema.Attribute.Private;
-    location: Schema.Attribute.String;
-    publishedAt: Schema.Attribute.DateTime;
-    tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
-    title: Schema.Attribute.String;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
 export interface ApiMarketingPlanMarketingPlan
   extends Struct.CollectionTypeSchema {
   collectionName: 'marketing_plans';
@@ -539,6 +501,43 @@ export interface ApiMarketingPlanMarketingPlan
   };
 }
 
+export interface ApiPhotographyPhotography extends Struct.CollectionTypeSchema {
+  collectionName: 'photographies';
+  info: {
+    description: '';
+    displayName: 'Photography';
+    pluralName: 'photographies';
+    singularName: 'photography';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    alt_text: Schema.Attribute.String;
+    aspect_ratio: Schema.Attribute.Enumeration<
+      ['landscape', 'portrait', 'square']
+    >;
+    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::photography.photography'
+    > &
+      Schema.Attribute.Private;
+    location: Schema.Attribute.String;
+    publishedAt: Schema.Attribute.DateTime;
+    tags: Schema.Attribute.Relation<'manyToMany', 'api::tag.tag'>;
+    title: Schema.Attribute.String;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiTagTag extends Struct.CollectionTypeSchema {
   collectionName: 'tags';
   info: {
@@ -559,7 +558,7 @@ export interface ApiTagTag extends Struct.CollectionTypeSchema {
     name: Schema.Attribute.String;
     photographies: Schema.Attribute.Relation<
       'manyToMany',
-      'api::landscape-photo.landscape-photo'
+      'api::photography.photography'
     >;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
@@ -1080,8 +1079,8 @@ declare module '@strapi/strapi' {
       'api::business-plan.business-plan': ApiBusinessPlanBusinessPlan;
       'api::category.category': ApiCategoryCategory;
       'api::certificate.certificate': ApiCertificateCertificate;
-      'api::landscape-photo.landscape-photo': ApiLandscapePhotoLandscapePhoto;
       'api::marketing-plan.marketing-plan': ApiMarketingPlanMarketingPlan;
+      'api::photography.photography': ApiPhotographyPhotography;
       'api::tag.tag': ApiTagTag;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
