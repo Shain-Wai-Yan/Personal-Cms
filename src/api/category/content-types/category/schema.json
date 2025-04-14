@@ -15,9 +15,9 @@
       "unique": true,
       "required": true
     },
-    "photography": {
+    "photographies": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::photography.photography",
       "mappedBy": "category"
     }
