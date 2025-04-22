@@ -11,6 +11,10 @@ export default [
         "http://127.0.0.1:5500", // Add your local development server
         "http://localhost:5500", // Also add localhost equivalent
         "http://localhost:3000", // Common Next.js development port
+        "https://shainwaiyan.com", // Your new domain
+        "http://shainwaiyan.com", // HTTP variant of your domain
+        "https://www.shainwaiyan.com", // WWW subdomain variant
+        "http://www.shainwaiyan.com", // HTTP WWW subdomain variant
       ],
       headers: [
         "Content-Type",
