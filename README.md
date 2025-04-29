@@ -1,4 +1,4 @@
-# Project Name
+# This is my Personal Cms Setup Project
 
 © 2025 Shain Wai Yan. All rights reserved.
 
