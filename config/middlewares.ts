@@ -1,4 +1,4 @@
-export default [
+module.exports = [
   "strapi::logger",
   "strapi::errors",
   "strapi::security",
@@ -22,9 +22,21 @@ export default [
         "Origin",
         "Accept",
         "cache-control",
+        "Cache-Control", // Added for case-sensitive servers
+        "Pragma", // Added for cache control
+        "Expires", // Added for cache control
+        "If-Modified-Since", // Added for conditional requests
+        "If-None-Match", // Added for ETag support
+        "ETag", // Added for response validation
+        "Last-Modified", // Added for timestamp validation
+        "Content-Length", // Added for response size
+        "Content-Range", // Added for partial content support
+        "Range", // Added for partial content requests
       ],
-      methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+      methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"],
       credentials: true,
+      maxAge: 86400, // 24 hours in seconds - how long preflight requests can be cached
+      preflightContinue: false,
     },
   },
   "strapi::poweredBy",
