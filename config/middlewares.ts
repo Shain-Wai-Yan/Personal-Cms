@@ -5,7 +5,6 @@ module.exports = [
   {
     name: "strapi::cors",
     config: {
-      enabled: true,
       origin: [
         "https://personal-web-deploy.vercel.app",
         "http://127.0.0.1:5500", // Add your local development server
