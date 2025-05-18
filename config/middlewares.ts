@@ -14,6 +14,10 @@ module.exports = [
         "http://shainwaiyan.com", // HTTP variant of your domain
         "https://www.shainwaiyan.com", // WWW subdomain variant
         "http://www.shainwaiyan.com", // HTTP WWW subdomain variant
+        "https://backend.shainwaiyan.com", // Primary Strapi subdomain
+        "http://backend.shainwaiyan.com", // HTTP variant of primary subdomain
+        "https://backendbackup.shainwaiyan.com", // Backup Strapi subdomain
+        "http://backendbackup.shainwaiyan.com", // HTTP variant of backup subdomain
       ],
       headers: [
         "Content-Type",
