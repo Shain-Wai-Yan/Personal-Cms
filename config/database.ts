@@ -2,6 +2,7 @@ import path from "path";
 
 export default ({ env }) => {
   const client = env("DATABASE_CLIENT", "postgres"); // Set default to postgres
+  const isBackupServer = env("STRAPI_ROLE") === "backup";
 
   const connections = {
     mysql: {
@@ -60,6 +61,11 @@ export default ({ env }) => {
       client,
       ...connections[client],
       acquireConnectionTimeout: env.int("DATABASE_CONNECTION_TIMEOUT", 60000),
+      // Only run migrations on primary server
+      settings: {
+        runMigrations: !isBackupServer,
+        forceMigration: !isBackupServer,
+      },
     },
   };
 };

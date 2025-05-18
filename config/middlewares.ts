@@ -1,4 +1,4 @@
-module.exports = [
+export default [
   "strapi::logger",
   "strapi::errors",
   "strapi::security",
@@ -46,4 +46,9 @@ module.exports = [
   "strapi::session",
   "strapi::favicon",
   "strapi::public",
+  // Add the read-only middleware
+  {
+    name: "global::read-only",
+    config: {},
+  },
 ];
