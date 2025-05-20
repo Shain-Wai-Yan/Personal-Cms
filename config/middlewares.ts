@@ -46,7 +46,6 @@ export default [
   "strapi::session",
   "strapi::favicon",
   "strapi::public",
-  // Add the read-only middleware
   {
     name: "global::read-only",
     config: {},
