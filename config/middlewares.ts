@@ -7,15 +7,17 @@ export default [
     config: {
       origin: [
         "https://personal-web-deploy.vercel.app",
-        "http://127.0.0.1:5500", // Add your local development server
-        "http://localhost:5500", // Also add localhost equivalent
-        "http://localhost:3000", // Common Next.js development port
-        "https://shainwaiyan.com", // Your new domain
-        "http://shainwaiyan.com", // HTTP variant of your domain
-        "https://www.shainwaiyan.com", // WWW subdomain variant
-        "http://www.shainwaiyan.com", // HTTP WWW subdomain variant
-        "https://api.shainwaiyan.com", // Primary Strapi subdomain
-        "http://api.shainwaiyan.com", // HTTP variant of primary subdomain
+        "http://127.0.0.1:5500",
+        "http://localhost:5500",
+        "http://localhost:3000",
+        "https://shainwaiyan.com",
+        "http://shainwaiyan.com",
+        "https://www.shainwaiyan.com",
+        "http://www.shainwaiyan.com",
+        "https://api.shainwaiyan.com",
+        "http://api.shainwaiyan.com",
+        // ADD THIS LINE - your worker domain
+        "https://crawler-detector-and-ssr-ssg-functioner.shainwaiyan2002.workers.dev",
       ],
       headers: [
         "Content-Type",
@@ -23,20 +25,20 @@ export default [
         "Origin",
         "Accept",
         "cache-control",
-        "Cache-Control", // Added for case-sensitive servers
-        "Pragma", // Added for cache control
-        "Expires", // Added for cache control
-        "If-Modified-Since", // Added for conditional requests
-        "If-None-Match", // Added for ETag support
-        "ETag", // Added for response validation
-        "Last-Modified", // Added for timestamp validation
-        "Content-Length", // Added for response size
-        "Content-Range", // Added for partial content support
-        "Range", // Added for partial content requests
+        "Cache-Control",
+        "Pragma",
+        "Expires",
+        "If-Modified-Since",
+        "If-None-Match",
+        "ETag",
+        "Last-Modified",
+        "Content-Length",
+        "Content-Range",
+        "Range",
       ],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS", "HEAD"],
       credentials: true,
-      maxAge: 86400, // 24 hours in seconds - how long preflight requests can be cached
+      maxAge: 86400,
       preflightContinue: false,
     },
   },
